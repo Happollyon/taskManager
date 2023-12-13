@@ -1,0 +1,56 @@
+<!-- app/views/users/register.html.erb -->
+<!--
+This is the registration page for the application 
+If teh user is not logged in, they can register for a new account
+If the user is logged in, they are redirected to the home page
+if registration is successful is redirected to the login page
+-->
+<html>
+<head>
+        <!-- Meta tags for character encoding and responsive design -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Link to the stylesheet for this page -->
+        <link rel="stylesheet" href="register.css">
+        
+        <!-- Title of the webpage -->
+        <title>TaskMaster Pro</title>
+</head>
+<body>
+
+<!-- Main container for the registration page -->
+<div id="register-cont"  >
+    <!-- Navigation bar with links to Home, Login, Register, and About pages -->
+    <nav>
+        <%=  link_to "Home", home_path ,class:"nav-buton"%>
+        <%=  link_to "Login", login_path ,class:"nav-buton"%>
+        <%= link_to "Register", register_path,class:"nav-buton" %>
+       
+    </nav>  
+    
+    <!-- Container for the registration form -->
+    <div class="login-page">
+     <!-- Registration form -->
+     <div class="form">
+      <!-- Form is created with Rails form_with helper, model is a new User instance -->
+      <%= form_with(model: User.new, url: users_path, local: true, class: 'login-form') do |form| %>
+        <!-- Text field for username -->
+        <%= form.text_field :username, placeholder: 'Username' %>
+        <!-- Password field for password -->
+        <%= form.password_field :password, placeholder: 'Password' %>
+        <!-- Password field for password confirmation -->
+        <%= form.password_field :password_confirmation, placeholder: 'Confirm Password' %>
+        <!-- Submit button for the form -->
+        <%= form.submit 'Register' %>
+        <!-- Link to login page for already registered users -->
+        <p class="message">Already registered? <%= link_to 'Login', login_path, id: 'register-link' %></p>
+      <% end %>
+    </div>
+    
+
+    </div>
+</div>
+</body>
+
+</html>

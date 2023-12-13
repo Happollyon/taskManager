@@ -1,0 +1,37 @@
+<!-- views/pages/home.html.erb -->
+<!-- this page is the home page of the application  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>TaskMaster Pro</title>
+</head>
+
+<body>
+<div class="landing-cont1">
+<nav>
+    <%=  link_to "Login", login_path ,class:"nav-buton"%>
+    <%= link_to "Register", register_path,class:"nav-buton" %>
+    
+</nav>  
+<div id="landing-image">
+    <%= image_tag("undraw_task_list.png", alt: "landingSVG") %>
+</div>
+</div>
+<div class="landing-cont2">
+    <%= image_tag("landingSVG.png", alt: "landingSVG") %>
+</div> 
+
+</body>
+
+</html>
+
+   
+
+
+
+
+

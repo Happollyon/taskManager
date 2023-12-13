@@ -1,0 +1,19 @@
+<!-- app/views/users/register.html.erb -->
+<!-- 
+if the user tries to register a user name that already 
+exists, the form will be re-rendered with the error messages
+-->
+<h1>Register</h1>
+
+<%= form_with model: User.new, local: true do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %>
+
+  <%= form.submit 'Register' %>
+<% end %>

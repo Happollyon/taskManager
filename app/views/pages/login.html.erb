@@ -1,0 +1,36 @@
+<!-- views/pages/login.html.erb-->
+<!--
+This page is the page the user uses to login
+the user logs out of the application he is redirected to this page
+if the user register successfully he is redirected to this page
+-->
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="register.css">
+        <title>TaskMaster Pro</title>
+</head>
+<body>
+
+<div id="register-cont">
+    <nav>
+        <%=  link_to "Home", home_path ,class:"nav-buton"%>
+        <%=  link_to "Login", login_path ,class:"nav-buton"%>
+        <%= link_to "Register", register_path,class:"nav-buton" %>
+       
+    </nav>  
+    <div class="login-page">
+        <div class="form">
+            <%= form_with(url: sessions_path, class: 'login-form') do |form| %>
+            <%= form.text_field :username, placeholder: 'Username' %>
+            <%= form.password_field :password, placeholder: 'Password' %>
+            <%= form.submit 'Login' %>
+            <p class="message">Not registered? <%= link_to 'Create an account', register_path, id: 'register-link' %></p>
+        <% end %>
+    </div>
+    
+    </div>
+</div>
+</body>
+</html>

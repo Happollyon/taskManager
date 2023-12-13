@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+    font-family: 'Poppins', sans-serif;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: #f5cb0c;    
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    position:static;
+    top: 0px;
+    left: 0px;
+}
+.nav-buton{
+    background-color: #f8f8f8ef;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 10em;
+    border-radius: 1rem;
+    color: #10451dff;
+    box-shadow: 0 0.4rem #2dc653ff;
+    cursor: pointer;
+    font-weight: bolder;
+   }
+   
+   .nav-buton:active {
+    color: white;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+   }
+   
+   .nav-buton:hover:not(:disabled) {
+    background: #155d27ff;
+    color: white;
+    text-shadow: 0 0.1rem #bcb4b4;
+   }
+   
+   .nav-buton:disabled {
+    cursor: auto;
+    color: grey;
+   }
+
+.landing-cont1{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+#landing-image{
+    width: 100%;
+    height: 90vh;
+    background-color: white;
+}
+.landing-cont2{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+   
+}
+.landing-cont2>svg{
+    width: 100vw;
+}
+
+/**********  register page  **********/

@@ -1,0 +1,66 @@
+<!--views/pages/mains.html.erb-->
+<!--
+This is the main page of the app
+It contains a side panel and a list of items
+The side panel contains a list of items each item can be clicked to show the content and a button to delete the item
+The list of items contains a form to add new item and a button to delete the item
+once the item is added the user can mark the item as completed or uncompleted. The user can also delete the item.
+-->
+<html>
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+<div id="main-container">
+  <div id="panel-container">
+   <!-- html for a side panel 
+        a header with logout, profile
+        containing a list of items each item can be clicked to show the content and a button to delete the item
+        with butoon to add new item  
+   -->
+   <div id="panel-header">
+  <h1>Panel</h1>
+ <%= link_to logout_path, method: :delete do %>
+  <i class="fa-solid fa-right-from-bracket"></i>
+<% end %>
+ 
+  <i class="fa-solid fa-plus"></i>
+</div>
+
+    
+
+  </div>
+ <div id="list-container">
+    <header>
+      <h1>To do List</h1>
+    </header>
+    <form id="task-form">
+      <input type="text" class='todo-inputs'>
+      <button class='todo-button'>
+        <i id="add-task" class='fas fa-plus-square'></i>
+      </button>
+      <div class="select">
+        <select name="todos" class='filter-todos'>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
+    </form>
+    <div class="todo-container">
+      <ul class="todo-list"></ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var userId = '<%= current_user.id %>'; // assuming you have a `current_user` method available
+  document.getElementById('task-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Handle the form submission with JavaScript
+  });
+</script>
+</body>
+</html>
